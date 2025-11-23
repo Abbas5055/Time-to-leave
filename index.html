@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Time-to-Leave Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Time-to-Leave Calculator</h1>
+    <p class="subtitle">Enter distance, speed, and meeting time — get the exact leave time and a live countdown.</p>
+
+    <div class="card">
+      <label>Distance (km)
+        <input id="distance" type="number" min="0" step="0.1" value="10">
+      </label>
+
+      <label>Average speed (km/h)
+        <input id="speed" type="number" min="1" step="0.1" value="40">
+      </label>
+
+      <label>Meeting time
+        <input id="meetingTime" type="datetime-local">
+      </label>
+
+      <label>Traffic buffer (minutes)
+        <input id="buffer" type="number" min="0" step="1" value="10">
+      </label>
+
+      <div class="row">
+        <button id="calcBtn">Calculate Leave Time</button>
+        <button id="nowBtn" class="ghost">Set meeting = 15 min from now</button>
+      </div>
+
+      <div id="output" class="output hidden">
+        <p><strong>Leave at:</strong> <span id="leaveAt">—</span></p>
+        <p><strong>Travel duration:</strong> <span id="travDur">—</span></p>
+        <p id="countdownRow" class="countdown"><strong>Countdown:</strong> <span id="countdown">—</span></p>
+      </div>
+
+      <p class="hint">Tip: If you want extra safety, increase the traffic buffer.</p>
+    </div>
+
+    <footer>
+      <small>Built for AI for Bharat — Single Purpose Website • Export-ready</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
